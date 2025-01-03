@@ -1,0 +1,5 @@
+# Ignore generated simulator and related files
+/sim/obj_dir/
+
+# Ignore the dump file
+/sim/dump.vcd
