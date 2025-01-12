@@ -4,7 +4,7 @@ module top (
     input logic clk,
     input logic rst_n
 );
-  // Localparams
+  // The configuration of the DUT
   localparam int unsigned DUT_WIDTH = 4;
 
   // The DUT
