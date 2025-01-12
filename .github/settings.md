@@ -7,6 +7,7 @@
   - [ ] Wikis
   - [x] Issues
   - [ ] Sponsorships
+  - [x] Preserve this repository
   - [ ] Discussions
   - [ ] Projects
 - Pull requests
@@ -18,3 +19,5 @@
   - [ ] Automatically delete head branches
 - Archives
   - [ ] Include Git LFS objects in archives
+- Repository Visibility
+  - Public
