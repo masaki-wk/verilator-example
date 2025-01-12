@@ -47,7 +47,7 @@ module top (
 
   // Enable tracing if `+trace` argument specified
   initial begin
-    if ($test$plusargs("trace")) begin
+    if ($test$plusargs("trace") != 0) begin
       $display("Start tracing to dump.vcd...");
       $dumpfile("dump.vcd");
       $dumpvars();
