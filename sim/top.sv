@@ -1,13 +1,11 @@
 // The top module in SystemVerilog
 
-`include "config.svh"
-
 module top (
     input logic clk,
     input logic rst_n
 );
   // Localparams
-  localparam int unsigned DUT_WIDTH = `DUT_WIDTH;
+  localparam int unsigned DUT_WIDTH = 4;
 
   // The DUT
   logic                 dut_enb;
