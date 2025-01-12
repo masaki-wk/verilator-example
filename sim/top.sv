@@ -6,19 +6,22 @@ module top (
     input logic clk,
     input logic rst_n
 );
+  // Localparams
+  localparam int unsigned DUT_WIDTH = `DUT_WIDTH;
 
   // The DUT
-  logic dut_enb;
-  logic dut_carryout;
+  logic                 dut_enb;
+  // verilator lint_off UNUSEDSIGNAL
+  logic [DUT_WIDTH-1:0] dut_count;
+  // verilator lint_on UNUSEDSIGNAL
+  logic                 dut_carryout;
   Counter #(
-      .WIDTH(`DUT_WIDTH)
+      .WIDTH(DUT_WIDTH)
   ) dut (
       .clk     (clk),
       .rst_n   (rst_n),
       .enb     (dut_enb),
-      // verilator lint_off PINCONNECTEMPTY
-      .count   (  /*open*/),
-      // verilator lint_on PINCONNECTEMPTY
+      .count   (dut_count),
       .carryout(dut_carryout)
   );
 
