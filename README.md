@@ -9,9 +9,36 @@ A simple example of how to use Verilator.
 - GNU Make
 - VCD file viewer, e.g. GTKwave (only for viewing signal dumps)
 
-## How to use
+## Structures
 
-Run `make` in the sim/ directory to build and run the simulation.
+The hierarchy of modules are shown below:
+
+```mermaid
+flowchart LR
+  subgraph "sim_main (C++)"
+    subgraph "top (SystemVerilog)"
+      subgraph "DUT: Counter (SystemVerilog)"
+      end
+    end
+  end
+```
+
+- Counter: the DUT, a simple counter in SystemVerilog
+- top: the lower part of the testbench in SystemVerilog
+- sim_main: the upper part of the testbench in C++
+
+The directory structure is shown below:
+
+- src/ (includes the DUT)
+  - Counter.sv
+- sim/ (includes the testbench)
+  - Makefile
+  - sim_main.cpp
+  - top.sv
+
+## How to build and simulate
+
+Run `make` in sim/ directory to build and simulate.
 
 ```shell
 $ cd sim
@@ -25,4 +52,4 @@ Start tracing to dump.vcd...
 - top.sv:41: Verilog $finish
 ```
 
-If successfull, a signal dump file `dump.vcd` will be created.
+If successfull, a signal dump file `dump.vcd` will be created in sim/ directory.
